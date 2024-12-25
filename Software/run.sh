@@ -1,0 +1,1 @@
+python3 ./yolov9/detect.py --img 320 --conf 0.5 --source 0 --device 0 --weights models/best.pt --project images --name output --exist-ok 
