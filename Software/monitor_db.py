@@ -53,6 +53,6 @@ def monitor_file(txt_file_path, db_file_path):
 
 if __name__ == "__main__":
     txt_file_path = "./runs/detect/predict/labels/piyan.txt"  
-    db_file_path = "./db.json"    
+    db_file_path = "./DB/db.json"    
 
     monitor_file(txt_file_path, db_file_path)
