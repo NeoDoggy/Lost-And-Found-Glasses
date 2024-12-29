@@ -9,7 +9,7 @@ The firmware is for an esp32-s3 camera, feel free to upload it to your board wit
 
 ## Training
 
-1. Navigate to the `./yolo/` directory and open the `YOLO11.ipynb` notebook.
+1. Navigate to the `./Software/yolo/` directory and open the `YOLO11.ipynb` notebook.
 2. Start running from the `setup` cell and ensure all required `pip` packages are installed.
 3. Run the `predict` cell to verify if `yolo11n.pt` is loaded successfully.
 4. Locate and run the `import roboflow` cell:
@@ -22,28 +22,28 @@ The firmware is for an esp32-s3 camera, feel free to upload it to your board wit
    - `imgsz`: Set the image size to your preference.
    - Load the `yolo11n.pt` model.
 7. Start the training process.
-8. Once training is complete, locate the `best.pt` file and move it to the `./model` directory.
+8. Once training is complete, locate the `best.pt` file and move it to the `./Software/model` directory.
 
 ## Implementation
 
 **Note:** All implementation scripts must be run simultaneously.
 
-1. Run `saveImg.py`:
+1. Run `./Software/saveImg.py`:
    - This script connects to the ESP32 camera at the URL `http://192.168.0.107/capture`.
-   - Captured images will be saved to the `./images/input` directory.
+   - Captured images will be saved to the `./Software/images/input` directory.
 
-2. Run `main.py`:
-   - Loads the `best.pt` model to predict the objects in the images saved in `./images/input`.
+2. Run `./Software/main.py`:
+   - Loads the `best.pt` model to predict the objects in the images saved in `./Software/images/input`.
    - Displays recognition results using the `pygame` interface.
 
-3. Run `STREAMmain.py`:
+3. Run `./Software/STREAMmain.py`:
    - If `main.py` detects an object, it returns parameters used to confirm whether an object has been scanned.
 
-4. Run `monitor_db.py`:
+4. Run `./Software/monitor_db.py`:
    - Continuously checks if the detected object's time is later than the `database last seen` time.
    - If true, updates the database.
 
-5. Run `showDB.py`:
+5. Run `./Software/showDB.py`:
    - Displays all objects and their `last seen time` from the database using a `pygame` interface.
 
 
