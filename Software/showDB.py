@@ -5,7 +5,7 @@ from datetime import datetime
 
 # Function to read JSON data from file
 def read_json_file():
-    with open("./db.json", "r") as file:
+    with open("./DB/db.json", "r") as file:
         return json.load(file)
 
 labels = {
